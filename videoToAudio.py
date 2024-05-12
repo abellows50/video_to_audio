@@ -3,9 +3,7 @@ from audio_extract import extract_audio
 Downloads = "C:/Users/abell/Downloads"
 
 PAIRS = [\
-            [f"{Downloads}/testVid.mp4", "odecha.mp3"],\
-            [f"{Downloads}/RPReplay_Final1713113401.mp4","Adonai_Zecharanu_Yivarech.mp3"],\
-            [f"{Downloads}/RPReplay_Final1713113595.mp4","Betzeit_Yisroel.mp3"],\
+            ["C:/Users/abell/Downloads/Shalosh_Regalim_Maariv.mp4","./Shalosh_Regalim_Maariv.mp3"],\
         ]
 def main():
     for pair in PAIRS:
