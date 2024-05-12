@@ -1,17 +1,18 @@
-from pytube import YouTube
+from yt_dlp import YoutubeDL
 import sys
 
-def downloadYouTube(videourl, name):
+def downloadYouTube(videourl,directory):
+    dl_ops = {
+      'outtmpl': directory + '%(title)s.%(ext)s',
+    }
+    print(f"downloading {videourl}")
     try:
-        yt = YouTube(videourl)
-    except:
-        print("Connection Error") #to handle exception
-    audiofiles = yt.streams.filter(only_audio=True)
-    d_video = audiofiles[1]
-    try:
-        d_video.download(output_path="./data", filename=name)
+        with YoutubeDL(dl_ops) as ydl:
+            ydl.download([videourl])
+            
     except Exception as e:
-        print(e)
+        print(e) #to handle exception
+    
     
 
 def processLinks(URL):
